@@ -15,7 +15,11 @@ const Todo = () => {
         setTodos(updatedTodo);
     }
    
-   
+   const handelDeleteTodo=(index)=>{
+    let dltTodo=[...allTodos];
+    dltTodo.splice(index, 1);
+    setTodos(dltTodo)
+   }
 
   return (
     <div>
@@ -40,7 +44,7 @@ const Todo = () => {
                     <p>{item.description}</p>
                     
                 </div>
-                <button style={{ border: "none"}} id='dlt' >❌</button>
+                <button style={{ border: "none"}} id='dlt'onClick={()=>handelDeleteTodo(index)} >❌</button>
             </div>
             )
            })}
